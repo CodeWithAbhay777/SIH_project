@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    border-radius: 50%;
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    gap: 1px;
+}
+
+.img {
+    height: 55px;
+    margin: 15px 0px 15px 25px;
+    object-fit: contain;
+}
+
+.flex-container {
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#26166e;
+}
+
+#home {
+    color: white;
+    font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+
+ul {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style-type: none;
+    margin-right: 40px;
+    
+}
+ .dropdown-content a {
+    text-decoration: none;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+        margin-top: 30px;
+ }
+ a:hover {
+    border-bottom: 1px solid white;
+ }
+ a:active {
+    background-color: #28156d;
+    color: white;
+ }
+ .dropbtn {
+    visibility: hidden;
+ }
+@media  (max-width : 900px) {
+.dropbtn {
+    visibility: visible;
+  background-color:#26166e;
+  color: white;
+  padding: 10px;
+  font-size: 10px;
+  border: none;
+  cursor: pointer;
+}
+.hamburger-icon {
+    height: 30px;
+    background-color: white;
+    border-radius: 30%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #28156d;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(104, 146, 183);
+}
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky + .home-content {
+    padding-top: 102px;
+  }
+h1 {
+    margin: 0;
+}
+
+/*nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+*/
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 100px;
+    max-width: max-content;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: max-content;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #26166e;
+    color: #fff;
+    /*position: absolute;*/
+    width: 100%;
+    bottom: 0;
+}
