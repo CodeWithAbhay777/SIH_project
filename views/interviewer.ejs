@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interviewer Profile</title>
+    <link rel="stylesheet" href="/css/styles3.css">
+</head>
+<body>
+    <header id="myHeader">
+        <div class="flex-container">
+            <div class="logo">
+                <div><img src="./css/Images/Logo1.jpg" alt="logo" class="img"/></div>
+                <div><h1 id="home" class="mt-2">DefenceTalent</h1></div>
+            </div>
+            <div id="mySidenav" class="dropdown d-flex justify-content-center mb-2">
+                <ul class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="jobs.html">Jobs</a>
+                </ul>
+                <button class="dropbtn"><img src="./css/Images/list (3).svg" class="hamburger-icon" /></button>
+                
+              </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Interviewer Profile</h1>
+        <form id="interviewerProfileForm" method="POST" action="/interviewer/profile">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="name" value="<%= usedInProfilePage.name %>">
+            </div>
+
+            <div class="form-group">
+                <label for="profilePicture">Profile Picture</label>
+                <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<%= usedInProfilePage.email %>">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required value="<%= usedInProfilePage.phone %>" >
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="jobTitle">Current Job Title</label>
+                <input type="text" id="jobTitle" name="jobTitle" required>
+            </div>
+
+           <!-- <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" required>
+            </div>-->
+
+          <!--  <div class="form-group">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry" required>
+                    <option value="Technology">Technology</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Healthcare">Healthcare</option>-->
+                    <!-- Add more industries as needed -->
+                <!--</select>
+            </div>-->
+
+            <div class="form-group">
+                <label for="experienceLevel">Experience Level</label>
+                <select id="experienceLevel" name="experienceLevel" required>
+                    <option value="Mid-level">Mid-level</option>
+                    <option value="Senior-level">Senior-level</option>
+                    <option value="Executive-level">Executive-level</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="interviewExpertise">Interview Expertise</label>
+                <input type="text" id="interviewExpertise" name="interviewExpertise" placeholder="e.g., Technical Interviews, HR Interviews" required>
+            </div>
+
+            <div class="form-group">
+                <label for="linkedIn">LinkedIn Profile</label>
+                <input type="url" id="linkedIn" name="linkedIn" placeholder="https://www.linkedin.com/in/yourprofile">
+            </div>
+
+            <button type="submit">Create Profile</button>
+        </form>
+
+        <div id="successMessage" class="hidden">
+            <h2>Profile Created Successfully!</h2>
+            <p>Your profile has been created. You can now start scheduling interviews.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Interviewing Platform</p>
+    </footer>
+
+    <!-- <script src="/js/script1.js"></script> -->
+</body>
+</html>

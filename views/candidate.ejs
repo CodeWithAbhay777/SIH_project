@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Profile</title>
+    <link rel="stylesheet" href="/css/styles2.css">
+</head>
+<body>
+    <header id="myHeader">
+        <div class="flex-container">
+            <div class="logo">
+                <div><img src="/images/Logo1.jpg" alt="logo" class="img"/></div>
+                <div><h1 id="home" class="mt-2">DefenceTalent</h1></div>
+            </div>
+            <div id="mySidenav" class="dropdown d-flex justify-content-center mb-2">
+                <ul class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="jobs.html">Jobs</a>
+                </ul>
+                <button class="dropbtn"><img src="/images/list.svg" class="hamburger-icon" /></button>
+                
+              </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Create Your Profile</h1>
+        <form id="profileForm" method="POST" action="/candidate/profile">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="name" required value="<%= usedInProfilePage.name %>">
+            </div>
+
+            <div class="form-group">
+                <label for="profilePicture">Profile Picture</label>
+                <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required value="<%= usedInProfilePage.email %>">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required value="<%= usedInProfilePage.phone %>">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="education">Education Qualifications</label>
+                <select id="education" name="education" required>
+                    <option value="Btech(Computer Science Engineering)">Btech(Computer Science Engineering)</option>
+                    <option value="Btech(Electronics and Communication Engineering)">Btech(Electronics and Communication Engineering)</option>
+                    <option value="Btech(Mechanical Engineering)">Btech(Mechanical Engineering)</option>
+                    <option value="Btech(Electrical Engineering)">Btech(Electrical Engineering)</option>
+                    <option value="Btech(Aerospace Engineering)">Btech(Aerospace Engineering)</option>
+                    <option value="Btech(Chemical Engineering)">Btech(Chemical Engineering)</option>
+                    <option value="Btech(Civil Engineering)">Btech(Civil Engineering)</option>
+                    <option value="Mtech(Computer Science Engineering)">Mtech(Computer Science Engineering)</option>
+                    <option value="Mtech(Electronics and Communication Engineering)">Mtech(Electronics and Communication Engineering)</option>
+                    <option value="Mtech(Mechanical Engineering)">Mtech(Mechanical Engineering)</option>
+                    <option value="Mtech(Electrical Engineering)">Mtech(Electrical Engineering)</option>
+                    <option value="Mtech(Aerospace Engineering)">Mtech(Aerospace Engineering)</option>
+                    <option value="Mtech(Civil Engineering)">Mtech(Civil Engineering)</option>
+                    <option value="BSc">BSc</option>
+                    <option value="MSc">MSc</option>
+                    <option value="Ph.D.">Ph.D.</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="jobTitle">Current Job Title</label>
+                <input type="text" id="jobTitle" name="jobTitle">
+            </div>
+
+            <div class="form-group">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry" required>
+                    <option value="Technology">Technology</option>
+                    <option value="Science">Science</option>
+                    <option value="Research">Research</option>
+                    <!-- Add more industries as needed -->
+                </select>
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="experienceLevel">Experience Level</label>
+                <select id="experienceLevel" name="experienceLevel" required>
+                    <option value="Entry-level">Entry-level</option>
+                    <option value="Mid-level">Mid-level</option>
+                    <option value="Senior-level">Senior-level</option>
+                </select>
+            </div> -->
+
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <input type="text" id="skills" name="skills" placeholder="e.g., Java, Python, AutoCad, Project Management">
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="resume">Upload Resume</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+            </div> -->
+
+            <button type="submit">Create Profile</button>
+        </form>
+
+        <div id="successMessage" class="hidden">
+            <h2>Profile Created Successfully!</h2>
+            <p>Your profile has been created. You can now access your dashboard.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Interviewing Platform</p>
+    </footer>
+
+    <!-- <script src="scripts.js"></script> -->
+</body>
+</html>

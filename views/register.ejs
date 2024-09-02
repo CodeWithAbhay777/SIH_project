@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Interview Website</title>
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+
+<body>
+    <header id="myHeader">
+        <div class="flex-container">
+            <div class="logo">
+                <div><img src="./css/Images/Logo1.jpg" alt="logo" class="img" /></div>
+                <div>
+                    <h1 id="home" class="mt-2">DefenceTalent</h1>
+                </div>
+            </div>
+            <div id="mySidenav" class="dropdown d-flex justify-content-center mb-2">
+                <ul class="dropdown-content">
+                    <a href="/">Home</a>
+                    <a href="/login">Login</a>
+                    <a href="/register">Sign Up</a>
+                    <a href="/contactUs">Contact Us</a>
+                    <a href="/jobs">Jobs</a>
+                </ul>
+                <button class="dropbtn"><img src="./css/Images/list (3).svg" class="hamburger-icon" /></button>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <form id="signupForm" action="/register" method="POST">
+            <label for="userType">Select:</label>
+            <select id="userType" name="userType">
+                <option value="interviewer">Interviewer</option>
+                <option value="candidate">Candidate</option>
+            </select>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="name">Username:</label>
+            <input type="text" id="username" name="username" placeholder="must be unique" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Interviewing Platform</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.5/axios.min.js"
+        integrity="sha512-01Pe9P3mJM/4c80VuoYEGHlspKGbd9uWQe9HtdLsdTqV0CS1kz8ca44sinVEXEvlZNciMmsAjeEbm5ZxHC7yYg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="/js/register.js"></script> -->
+</body>
+
+</html>
