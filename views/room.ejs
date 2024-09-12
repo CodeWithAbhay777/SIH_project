@@ -309,28 +309,36 @@
 
 				<div class="question-container">
 					<p>
-						<b>NAME : </b><%= sendingCandidateProfileToInterviewer.name %>
+						<b>NAME : </b>
+						<%= sendingCandidateProfileToInterviewer.name %>
 					</p>
 					<p>
-						<b>EMAIL : </b><%= sendingCandidateProfileToInterviewer.email %>
+						<b>EMAIL : </b>
+						<%= sendingCandidateProfileToInterviewer.email %>
 					</p>
 					<p>
-						<b>PHONE : </b><%= sendingCandidateProfileToInterviewer.phone %>
+						<b>PHONE : </b>
+						<%= sendingCandidateProfileToInterviewer.phone %>
 					</p>
 					<p>
-						<b>INDUSTRY : </b><%= sendingCandidateProfileToInterviewer.industry %>
+						<b>INDUSTRY : </b>
+						<%= sendingCandidateProfileToInterviewer.industry %>
 					</p>
 					<p>
-						<b>EDUCATION : </b><%= sendingCandidateProfileToInterviewer.education %>
+						<b>EDUCATION : </b>
+						<%= sendingCandidateProfileToInterviewer.education %>
 					</p>
 					<p>
-						<b>JOB TITLE : </b><%= sendingCandidateProfileToInterviewer.jobTitle %>
+						<b>JOB TITLE : </b>
+						<%= sendingCandidateProfileToInterviewer.jobTitle %>
 					</p>
 					<p>
-						<b>LOCATION : </b><%= sendingCandidateProfileToInterviewer.location %>
+						<b>LOCATION : </b>
+						<%= sendingCandidateProfileToInterviewer.location %>
 					</p>
 					<p>
-						<b>SKILLS : </b><%= sendingCandidateProfileToInterviewer.skills %>
+						<b>SKILLS : </b>
+						<%= sendingCandidateProfileToInterviewer.skills %>
 					</p>
 
 
@@ -354,11 +362,17 @@
 
 		<div id="nav-slider-candPOV">
 
-			<p>Interviewer haven't asked anythingg yet</p>
+			<p id="question-text">Interviewer haven't asked anything yet</p>
 
-			<textarea id="result" rows="8" cols="80"></textarea> <br>
-			<button id="start" class="record-btn">Start</button>
-			<button id="stop" class="record-btn">Stop and submit</button>
+
+			<div id="voice-recognize-area" style="display: none;">
+				<textarea id="result" rows="8" cols="80"></textarea> <br>
+				<button id="start" class="record-btn" onclick="startButtonPressed()">Start</button>
+				<button id="stop" class="record-btn" onclick="stopButtonPressed()">Stop and submit</button>
+
+			</div>
+
+
 
 			<!-- <p>Interviewer haven't asked anythingg yet</p> -->
 

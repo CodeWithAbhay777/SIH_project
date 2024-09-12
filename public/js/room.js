@@ -13,6 +13,12 @@ const ProfilesliderBtn = document.querySelector("#Profile-Slider-btn");
 
 
 
+//trail for voice reco...
+
+const voiceRecoAreaDiv = document.querySelector("#voice-recognize-area");
+
+
+
 const navWhiteboard = document.querySelector("#nav-slider-whiteboard");
 const navIntPOV = document.querySelector("#nav-slider-intPOV");
 const navCandPOV = document.querySelector("#nav-slider-candPOV");
@@ -20,7 +26,7 @@ const navProfile = document.querySelector("#nav-slider-profile");
 
 let startButton = document.getElementById('start');
 let stopButton = document.getElementById('stop');
-let resultElement = document.getElementById('result');
+// let resultElement = document.getElementById('result');
 
 const userDropDown = document.getElementById('myDropdown');
 const myVideo = document.createElement('video');
@@ -378,10 +384,24 @@ function askQuestion(question) {
 socket.on('display-question', (question) => {
 
   navCandPOV.innerHTML = `<p>${question}</p>
-  <textarea id="result" rows="8" cols="80"></textarea> <br>
-			<button id="start" class="record-btn">Start</button>
-			<button id="stop" class="record-btn">Stop and submit</button>`;
+  
+  <div id="voice-recognize-area" style="display: block;">
+				<textarea id="result" rows="8" cols="80"></textarea> <br>
+				<button id="start" class="record-btn" onclick="startButtonPressed()">Start</button>
+				<button id="stop" class="record-btn" onclick="stopButtonPressed()">Stop and submit</button>
+
+			</div>`;
+
+
+  
+
+  // showVoiceRecoArea();
 });
+
+// function showVoiceRecoArea() {
+//   console.log(voiceRecoAreaDiv);
+//   voiceRecoAreaDiv.style.display = "block";
+// }
 
 
 
@@ -686,42 +706,64 @@ let recognition = new webkitSpeechRecognition();
 
 recognition.lang = window.navigator.language;
 recognition.interimResults = true;
-recognition.continuous = true;  
+recognition.continuous = true;
 
 let isStoppedManually = false;
-let finalTranscript = '';  
+let finalTranscript = '';
 
-startButton.addEventListener('click', () => {
-  isStoppedManually = false; 
-  finalTranscript = '';  
+
+
+
+
+function startButtonPressed() {
+  console.log("start button pressed");
+  isStoppedManually = false;
+  finalTranscript = '';
   recognition.start();
-});
 
-stopButton.addEventListener('click', () => {
-  isStoppedManually = true;  
+}
+
+// startButton.addEventListener('click', () => {
+//   isStoppedManually = false;
+//   finalTranscript = '';
+//   recognition.start();
+// });
+
+function stopButtonPressed() {
+  isStoppedManually = true;
   recognition.stop();
-});
+}
+
+// stopButton.addEventListener('click', () => {
+//   isStoppedManually = true;
+//   recognition.stop();
+// });
 
 recognition.addEventListener('result', (event) => {
-  let interimTranscript = '';  
+  let resultElement = document.getElementById('result');
+  let interimTranscript = '';
   for (let i = event.resultIndex; i < event.results.length; i++) {
     const transcript = event.results[i][0].transcript;
     if (event.results[i].isFinal) {
-      console.log("final transcript : ", finalTranscript)
-      finalTranscript += transcript + ' '; 
-      console.log("transcript : ", transcript)
+      
+      finalTranscript += transcript + ' ';
+      
     } else {
       console.log("interimTranscript : ", interimTranscript)
-      interimTranscript += transcript;  
-      console.log("transcript : ", transcript)
+      interimTranscript += transcript;
+      
     }
   }
-  resultElement.value = finalTranscript + interimTranscript;  
+  resultElement.value = finalTranscript + interimTranscript;
 });
 
 recognition.addEventListener('end', () => {
   if (!isStoppedManually) {
-    recognition.start();  
+    recognition.start();
+  }
+  else {
+    let resultElement = document.getElementById('result');
+    resultElement.value = '';
   }
 });
 
@@ -732,35 +774,35 @@ recognition.addEventListener('end', () => {
 // recognition.continuous = true;
 
 // let isStoppedManually = false;
-// let finalTranscript = '';  
+// let finalTranscript = '';
 
 // startButton.addEventListener('click', () => {
-//   isStoppedManually = false; 
-//   finalTranscript = '';  
+//   isStoppedManually = false;
+//   finalTranscript = '';
 //   recognition.start();
 // });
 
 // stopButton.addEventListener('click', () => {
-//   isStoppedManually = true;  
+//   isStoppedManually = true;
 //   recognition.stop();
 // });
 
 // recognition.addEventListener('result', (event) => {
-//   let interimTranscript = '';  
+//   let interimTranscript = '';
 //   for (let i = event.resultIndex; i < event.results.length; i++) {
 //     const transcript = event.results[i][0].transcript;
 //     if (event.results[i].isFinal) {
-//       finalTranscript += transcript + ' '; 
+//       finalTranscript += transcript + ' ';
 //     } else {
-//       interimTranscript += transcript;  
+//       interimTranscript += transcript;
 //     }
 //   }
-//   resultElement.value = finalTranscript + interimTranscript;  
+//   resultElement.value = finalTranscript + interimTranscript;
 // });
 
 // recognition.addEventListener('end', () => {
 //   if (!isStoppedManually) {
-//     recognition.start();  
+//     recognition.start();
 //   }
 // });
 
