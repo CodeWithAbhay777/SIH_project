@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Interview Website</title>
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+<body>
+    <header id="myHeader">
+        <div class="flex-container">
+            <div class="logo">
+                <div><img src="./css/Images/Logo1.jpg" alt="logo" class="img"/></div>
+                <div><h1 id="home" class="mt-2">DefenceTalent</h1></div>
+            </div>
+            <div id="mySidenav" class="dropdown d-flex justify-content-center mb-2">
+                <ul class="dropdown-content">
+                <a href="/">Home</a>
+                <a href="/login">Login</a>
+                <a href="/register">Sign Up</a>
+                <a href="/contactUs">Contact Us</a>
+                <a href="/jobs">Jobs</a>
+                </ul>
+                <button class="dropbtn"><img src="./css/Images/list (3).svg" class="hamburger-icon" /></button>
+                
+              </div>
+        </div>
+    </header>
+    <main>
+        <form id="loginForm" method="POST" action="/login">
+            <label for="userType" >Select:</label>
+            <select id="userType" name="userType">
+                <option value="interviewer">Interviewer</option>
+                <option value="candidate">Candidate</option>
+            </select>
+
+            <label for="email">Username:</label>
+            <input type="text" id="email" required name="username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required name="password">
+
+            <button type="submit">Login</button>
+        </form>
+
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Interviewing Platform</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <!-- <script src="/js/login.js"></script> -->
+</body>
+</html>

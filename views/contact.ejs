@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DefenceTalent</title>
+    <link rel="stylesheet" href="css/contactstyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="flex-container">
+            <div class="logo">
+                <div><img src="/images/Logo1.jpg" alt="logo" class="img"/></div>
+                <div><h1 id="home" class="mt-2">DefenceTalent</h1></div>
+            </div>
+            <div id="mySidenav" class="dropdown d-flex justify-content-center mb-2">
+                <ul class="dropdown-content">
+                <a href="/">Home</a>
+                <a href="/login">Login</a>
+                <a href="/register">Sign Up</a>
+                <a href="/contactUs">Contact Us</a>
+                <a href="/jobs">Jobs</a>
+                </ul>
+                <button class="dropbtn"><img src="/images/list.svg" class="hamburger-icon" /></button>
+                
+              </div>
+        </div>
+    </header>
+
+    <section id ="contact">
+        <div id ="contactBanner">
+            <div><h1>Contact Us</h1></div>
+        </div>
+    </section>
+
+    <section class=" formContainer mt-5">
+        <div class="contact-col px-4 d-flex flex-column h-100 justify-content-center align-items-center container-sm ">
+            <form action="#">
+              <input type="text" name="name" id="contact-name" placeholder="Enter Your Name" required="">
+              <input type="tel" name="phone" id="contact-phone" pattern="[0-9]{10}" placeholder="Enter Your Phone Number" required="">
+              <input type="email" name="email" id="contact-email" placeholder="Enter Email Address" required="">
+  
+              <textarea rows="8" name="message" id="contact-message" placeholder="Message" required=""></textarea>
+              <input type="submit" id="contact-button" class="hero-btn red-btn" value="Send Message">
+            </form>
+          </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 DefenceTalent </p>
+    </footer>
+</body>
+</html>

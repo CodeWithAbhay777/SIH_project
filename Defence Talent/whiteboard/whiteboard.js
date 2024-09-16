@@ -38,6 +38,8 @@ function draw(event) {
         ctx.strokeStyle = currentColor; // Set the line color
     }
 
+    console.log(x , y);
+
     ctx.lineTo(x, y);
     ctx.stroke();
     ctx.beginPath();
