@@ -1,4 +1,4 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+/*document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
     let userType = document.getElementById('userType').value;
     let email = document.getElementById('email').value;
@@ -17,4 +17,16 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
 
     // Placeholder for actual sign-up logic
     alert(`Signing up as ${userType} with name: ${name} and email: ${email}`);
+});*/
+
+const container = document.getElementById('container');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
+
+registerBtn.addEventListener('click', () => {
+    container.classList.add("active");
+});
+
+loginBtn.addEventListener('click', () => {
+    container.classList.remove("active");
 });
