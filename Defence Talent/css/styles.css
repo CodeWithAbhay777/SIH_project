@@ -319,7 +319,7 @@ button:hover {
 
 footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 70px;
     background-color: #26166e;
     color: #fff;
     /* position: absolute;
@@ -430,3 +430,30 @@ footer {
     color: #fff;
     background-color:#1a46a0;
   }
+  #photoCollage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding: 90px;
+    margin-left: 100px;
+  }
+ .column{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+ }
+ @media  (max-width: 1000px){
+    #photoCollage {
+        padding: 0px;
+        margin-left: 30px;
+    }
+ }
+ .footerMenu li a {
+    color: white;
+    text-decoration: none;
+ }
+ .footerMenu li a:hover {
+    border-bottom: 0px white solid;
+ }
