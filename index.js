@@ -51,7 +51,8 @@ main().then(res => console.log("DB connected"))
     .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/sihproject');
+    // await mongoose.connect('mongodb://127.0.0.1:27017/sihproject');
+    await mongoose.connect('mongodb+srv://code_with_abhay:Avenger14%23@cluster0.g3cy5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 }
 
 
@@ -110,9 +111,9 @@ passport.deserializeUser(candidateDetails.deserializeUser());
 // ROUTES
 
 
-app.get("/login", (req, res) => {
-    res.render("login");
-});
+// app.get("/login", (req, res) => {
+//     res.render("login");
+// });
 
 
 app.get("/register", (req, res) => {
@@ -174,26 +175,25 @@ app.get("/candidate/profile", (req, res) => {
 });
 
 app.get("/interviewer/profile/:id", wrapAsync(async (req, res) => {
-    
-    let {id} = req.params;
+
+    let { id } = req.params;
 
     let dataToShowInProfileSection = await interviewerDetails.findById({ _id: id });
 
 
-
+    console.log(dataToShowInProfileSection);
 
     res.render("interviewerProfile", { dataToShowInProfileSection });
 }));
 
 app.get("/candidate/profile/:id", wrapAsync(async (req, res) => {
-    
-    let {id} = req.params;
+
+    let { id } = req.params;
 
     let dataToShowInProfileSection = await candidateDetails.findById({ _id: id });
 
-
-
-
+  
+    console.log(dataToShowInProfileSection);
     res.render("candidateProfile", { dataToShowInProfileSection });
 }));
 
@@ -205,13 +205,13 @@ app.get("/candidate/profile/:id", wrapAsync(async (req, res) => {
 
 
 
-app.get("/jobs" , (req,res) => {
+app.get("/jobs", (req, res) => {
     res.render("jobs");
 });
 
-app.get("/contactUs" , (req,res) => {
+app.get("/contactUs", (req, res) => {
     res.render("contact");
-    
+
 });
 
 
@@ -220,7 +220,7 @@ app.get("/contactUs" , (req,res) => {
 
 
 app.post("/register", wrapAsync(async (req, res) => {
-    let { username, name, email, userType, password, phone } = req.body;
+    let { username, email, userType, password } = req.body;
 
     if (userType === "interviewer") {
 
@@ -228,17 +228,16 @@ app.post("/register", wrapAsync(async (req, res) => {
             let userInfo = new interviewerDetails({
                 username: username,
                 email: email,
-                name: name,
-                phone: phone,
+
             });
 
             let user = await interviewerDetails.register(userInfo, password);
 
             let usedInProfilePage = {
-                name: name,
+
                 email: email,
                 userId: user._id,
-                phone: phone,
+
                 type: "interviewer",
             };
 
@@ -261,17 +260,16 @@ app.post("/register", wrapAsync(async (req, res) => {
             let userInfo = new candidateDetails({
                 username: username,
                 email: email,
-                phone: phone,
-                name: name,
+
 
             });
 
             let user = await candidateDetails.register(userInfo, password);
 
             let usedProfileEntries = {
-                name: name,
+
                 email: email,
-                phone: phone,
+
                 userId: user._id,
                 type: "candidate",
 
@@ -361,7 +359,8 @@ app.post('/login', wrapAsync(async (req, res, next) => {
         }
         if (!user) {
             console.log("User not found or wrong credentials");
-            return res.redirect('/login');
+            console.log(username, password);
+            return res.redirect('/register');
         }
 
         req.logIn(user, async (err) => {
@@ -399,7 +398,7 @@ app.post('/login', wrapAsync(async (req, res, next) => {
                 });
             } catch (error) {
                 console.error('Error setting session:', error);
-                res.redirect('/login');
+                res.redirect('/register');
             }
         });
     })(req, res, next);
@@ -431,7 +430,26 @@ app.get("/newID/:room", async (req, res) => {
             let requiredId = req.session.interviewerIdForRoom;
             user = await interviewerDetails.findById({ _id: requiredId });
             int_questions = await scientistBquestionBank.find({});
-            sendingCandidateProfileToInterviewer = await candidateDetails.findById({ _id: '66cea0a36c05d8f92bf365e7' });
+            // sendingCandidateProfileToInterviewer = await candidateDetails.findById({ _id: '66cea0a36c05d8f92bf365e7' });
+
+            sendingCandidateProfileToInterviewer = {
+                name : "demoCandidate",
+        
+                email : "candidateDemoMail@gmail.com",
+        
+                phone : 9756348723,
+        
+                location :"jabalpur",
+        
+                education : "Btech(Electronics and Communication Engineering)" , 
+        
+                jobTitle : "ScientistB",
+        
+                industry : "Technology",
+        
+                skills : "Python , C++ , C , JAVA , JAVASCRIPT",
+        
+            }
 
 
 
@@ -445,7 +463,29 @@ app.get("/newID/:room", async (req, res) => {
             let requiredId = req.session.candidateIdForRoom;
             user = await candidateDetails.findById({ _id: requiredId });
             int_questions = await scientistBquestionBank.find({});
-            sendingCandidateProfileToInterviewer = await candidateDetails.findById({ _id: '66cea0a36c05d8f92bf365e7' });
+            // sendingCandidateProfileToInterviewer = await candidateDetails.findById({ _id: '66cea0a36c05d8f92bf365e7' });
+
+            sendingCandidateProfileToInterviewer = {
+                name : "demoCandidate",
+        
+                email : "candidateDemoMail@gmail.com",
+        
+                phone : 9756348723,
+        
+                location :"jabalpur",
+        
+                education : "Btech(Electronics and Communication Engineering)" , 
+        
+                jobTitle : "ScientistB",
+        
+                industry : "Technology",
+        
+                skills : "Python , C++ , C , JAVA , JAVASCRIPT",
+        
+            }
+
+
+
 
             if (user) {
                 user = user.toObject();
@@ -485,7 +525,7 @@ app.post("/join", (req, res) => {
 // app.post("/checkAnswers", wrapAsync(async (req, res) => {
 //     let { answerByCandidate = "nothing", questionAsked = "nothing" } = req.body;
 
-    
+
 //     let realAnswerOfQuestion = await scientistBquestionBank.findOne({ question: questionAsked });
 
 

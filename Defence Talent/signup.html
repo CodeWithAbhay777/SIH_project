@@ -66,7 +66,7 @@
 </head>
 
 <body>
-    
+
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
@@ -78,19 +78,19 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registeration</span>-->
-                
-               <br> <label for="userType">Select:</label>
+
+                <br> <label for="userType">Select:</label>
                 <select id="userType">
                     <option value="interviewer">Interviewer</option>
                     <option value="candidate">Candidate</option>
                 </select>
-    
+
                 <label for="email">Email:</label>
                 <input type="email" id="email" required>
-    
+
                 <label for="password">Password:</label>
                 <input type="password" id="password" required>
-    
+
                 <button>Login</button>
             </form>
 
@@ -106,23 +106,23 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email password</span>-->
-                
+
                 <br><label for="userType">Select:</label>
-            <select id="userType">
-                <option value="interviewer">Interviewer</option>
-                <option value="candidate">Candidate</option>
-            </select>
+                <select id="userType">
+                    <option value="interviewer">Interviewer</option>
+                    <option value="candidate">Candidate</option>
+                </select>
 
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" required>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
 
-            
+
                 <button>Sign In</button>
             </form>
         </div>
@@ -143,9 +143,22 @@
     </div>
 
 
-    <script src="js/main.js"></script>
+    <script>
 
-    
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add("active");
+        });
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+    </script>
+
+
 </body>
 
 </html>

@@ -17,13 +17,13 @@ const candidateSchema = new mongoose.Schema({
     phone: {
         type: Number,
         unique: true,
-        required: true,
+        
 
     },
 
     name: {
         type: String,
-        required: true,
+        
     },
 
     location: {

@@ -386,7 +386,7 @@ socket.on('display-question', (question) => {
   navCandPOV.innerHTML = `<p>${question}</p>
   
   <div id="voice-recognize-area" style="display: block;">
-				<textarea id="result" rows="8" cols="80"></textarea> <br>
+				<textarea id="result" rows="7" cols="70"></textarea> <br>
 				<button id="start" class="record-btn" onclick="startButtonPressed()">Start</button>
 				<button id="stop" class="record-btn" onclick="stopButtonPressed()">Stop and submit</button>
 

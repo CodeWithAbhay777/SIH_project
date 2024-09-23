@@ -164,7 +164,7 @@ main {
     flex-direction: column;
     height: 65vh;
     margin-left: 30px;
-    align-items:left;
+    align-items: left;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
@@ -336,7 +336,7 @@ button:hover {
 
 footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 10px 70px;
     background-color: #26166e;
     color: #fff;
     /* position: absolute;
@@ -373,7 +373,7 @@ footer {
 }
 
 #contact {
-    background-image: url("./Images/contact-banner.jpg");
+    background-image: url("/images/contact-banner.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -462,3 +462,130 @@ footer {
     color: #fff;
     background-color: #1a46a0;
 }
+
+#photoCollage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding: 90px;
+    margin-left: 100px;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    margin: 20px;
+}
+
+@media (max-width: 1000px) {
+    #photoCollage {
+        padding: 0px;
+        margin-left: 30px;
+    }
+}
+
+.footerMenu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footerMenu li a:hover {
+    border-bottom: 0px white solid;
+}
+
+
+#chatbot-outer-body{
+    position: fixed;
+    right: -100%;
+    bottom: 5.5rem;
+    height:30rem;
+    width:20rem;
+    /* background-color: rgb(233, 228, 228); */
+    background-color: rgb(249, 246, 246);
+    border-radius: 15px;
+    box-shadow: 0px 0px 13px black;
+    margin: 15px;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+
+}
+
+#cb-header{
+    height:20%;
+    width:100%;
+    background-color:#26166E;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: white;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chat-area{
+    flex-grow: 1;
+    
+}
+.chatting {
+    width:70%;
+    color: white;
+    background-color: #26166E;
+    padding: 10px;
+    margin: 15px 10px;
+    border-radius: 10px;
+    
+    
+}
+.chatting i {
+    margin: 0px 5px;
+} 
+
+#bottom-input{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 7px;
+    
+
+}
+
+#bottom-input input {
+    margin:5px;
+    border-radius: 10px;
+}
+
+#bottom-input button{
+    border-radius: 10px;
+    background-color: #26166E;
+}
+
+
+#chatbot-btn{
+    position: fixed;
+    right:3.5rem;
+    bottom: 1.2rem;
+
+    height:70px;
+    width: 70px;
+    background-color: #26166E;
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#chatbot-btn:hover {
+    background-color: #312567;
+}
+

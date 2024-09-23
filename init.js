@@ -5,8 +5,10 @@ const scientistBquestionBank = require("./models/scientistB.js");
 main().then(res => console.log("DB connected"))
     .catch(err => console.log(err));
 
+
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/sihproject');
+    // await mongoose.connect('mongodb://127.0.0.1:27017/sihproject');
+    await mongoose.connect('mongodb+srv://code_with_abhay:Avenger14%23@cluster0.g3cy5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 }
 
 let template = [
