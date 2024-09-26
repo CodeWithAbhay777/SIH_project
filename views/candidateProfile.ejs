@@ -49,34 +49,43 @@
 
             <!-- ===== ===== Work Contaienr ===== ===== -->
             <div class="work">
-                <h1 class="heading">work</h1>
+                <h1 class="heading">WORK EXPERIENCE</h1>
                 <div class="primary">
-                    <h1>Krishna Electronics</h1>
-                    <span>Primary</span>
+                    <h1>Lead &nbsp;Data &nbsp;Scientist &nbsp;at &nbsp;QuantumTech &nbsp;Solutions</h1>
+                    <!-- <span>Primary</span> -->
                     <p>
-                        <%= dataToShowInProfileSection.location %>
+                        January 2019 - Present
                     </p>
                 </div>
 
                 <div class="secondary">
-                    <h1>Metropolitan <br>
-                        <%= dataToShowInProfileSection.jobTitle %>
+                    <h1>Assistant &nbsp;Professor &nbsp; at <br>National &nbsp; Institute &nbsp; of &nbsp; Technology&nbsp; (NIT) , Delhi <br>
+                       
                     </h1>
-                    <span>Secondary</span>
-                    <p>S34 E 65th Street <br> Tamil Nadu, TN 10651-78 156-187-60</p>
+                    <!-- <span>Secondary</span> -->
+                    <p>July 2016 - December 2018</p>
                 </div>
             </div>
 
             <!-- ===== ===== Skills Contaienr ===== ===== -->
+
+            <!-- <div class="skills">
+                <h1 class="heading">Bio</h1>
+                <p style="margin: 10px 0px; font-weight: 500;">Experienced data scientist and AI specialist with a strong background in machine learning, predictive analytics, and cybersecurity. Skilled in leading teams and delivering innovative AI-driven solutions across industries.</p>
+            </div> -->
+
+
             <div class="skills">
                 <h1 class="heading">Skills</h1>
                 <ul>
-                    <li style="--i:0">Android</li>
-                    <li style="--i:1">Web-Design</li>
-                    <li style="--i:2">UI/UX</li>
-                    <li style="--i:3">Video Editing</li>
+                    <li style="--i:0">AIML</li>
+                    <li style="--i:1">Python</li>
+                    <li style="--i:2">C++</li>
+                    <li style="--i:3">Data Analysis</li>
                 </ul>
             </div>
+
+            
         </section>
 
 
@@ -84,16 +93,16 @@
         <section class="userDetails card">
             <div class="userName">
                 <h1 class="name">
-                    <%= dataToShowInProfileSection.name %>
+                    Abhinay Kumar
                 </h1>
                 <div class="map">
                     <i class="ri-map-pin-fill ri"></i>
-                    <span>Edit details</span>
+                    <span style="margin-left: 50px;">Edit details</span>
                 </div>
-                <p>Student</p>
+                <p>Research and Innovation</p>
             </div>
 
-            <div class="rank">
+            <!-- <div class="rank">
                 <h1 class="heading">Rankings</h1>
                 <span>8,6</span>
                 <div class="rating">
@@ -103,7 +112,7 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-regular fa-star"></i>
                 </div>
-            </div>
+            </div> -->
 
             <div class="btns">
                 <ul>
@@ -114,12 +123,22 @@
 
                     <li class="sendMsg active" id="informationBtn">
                         <i class="ri-check-fill ri"></i>
-                        <a href="#">Information</a>
+                        <a href="#">Personal details</a>
                     </li>
 
                     <li class="sendMsg" id="upcomingInterviewsBtn">
                         <a href="#">Upcoming interviews</a>
                     </li>
+
+                    <li class="sendMsg" id="EducationBtn">
+                        <a href="#">Education</a>
+                    </li>
+
+                    <li class="sendMsg" id="ResultBtn">
+                        <a href="#">Result report</a>
+                    </li>
+
+                    
                 </ul>
             </div>
         </section>
@@ -143,7 +162,7 @@
                 <ul>
                     <li class="phone">
                         <h1 class="label">Phone:</h1>
-                        <span class="info">+91 <%= dataToShowInProfileSection.phone %></span>
+                        <span class="info">+91 9876543210</span>
                     </li>
 
                     <li class="address">
@@ -153,16 +172,16 @@
                         </span>
                     </li>
 
-                    <li class="email">
+                    <li class="email" >
                         <h1 class="label">E-mail:</h1>
-                        <span class="info">
-                            <%= dataToShowInProfileSection.email %>
+                        <span class="info" style="color: #0099cc;">
+                            abhinaykumar@gmail.com
                         </span>
                     </li>
 
                     <li class="site">
-                        <h1 class="label">Site:</h1>
-                        <span class="info">www.defencetalent.com</span>
+                        <h1 class="label">Exam Scores:</h1>
+                        <span class="info">GATE Score : 850 / 1000</span>
                     </li>
                 </ul>
             </div>
@@ -172,7 +191,7 @@
                 <ul>
                     <li class="birthday">
                         <h1 class="label">Birthday:</h1>
-                        <span class="info">Dec 25, 2000</span>
+                        <span class="info">12th March 1992</span>
                     </li>
 
                     <li class="sex">
@@ -290,6 +309,19 @@
                 </div>
 
             </div>
+
+
+            <div id="education_container" class="edu_area">
+                <h2>Master of Technology (M.Tech) in Computer Science and Engineering <br>Indian Institute of Technology (IIT) , Bombay</br></h2>
+                <p>2014 - 2016</p><br>
+                <p><b>CGPA : 8.8 / 10</b></p>
+            </div>
+
+            <div id="education_container" class="edu_area">
+                <h2>Bachelor of Technology (B.Tech) in Computer Science and Engineering <br>National Institute of Technology (NIT), Trichy</br></h2>
+                <p>2010 - 2014</p><br>
+                <p><b>CGPA : 8.0 / 10</b></p>
+            </div>
         </section>
 
 
@@ -308,6 +340,8 @@
         const basic_info_in_about = document.querySelector("#basic_info_in_about");
         const contact_info_in_about = document.querySelector("#contact_info_in_about");
         const tab_text = document.querySelector("#tab_text");
+        const educationBtn = document.querySelector("#EducationBtn")
+        const edu_area = document.getElementsByClassName("edu_area");
 
 
         assessmentBtn.addEventListener("click", (e) => {
@@ -315,6 +349,7 @@
             assessmentBtn.classList.add("active");
             informationBtn.classList.remove("active");
             upcomingInterviewsBtn.classList.remove("active");
+            educationBtn.classList.remove("active");
 
             basic_info_in_about.style.display = "none";
             contact_info_in_about.style.display = "none";
@@ -328,6 +363,10 @@
                 upcomingAssessmentContainer[i].style.display = "flex";
 
             }
+            for (let i = 0; i < edu_area.length; i++) {
+                edu_area[i].style.display = "none";
+
+            }
         });
 
         informationBtn.addEventListener("click", (e) => {
@@ -335,6 +374,7 @@
             assessmentBtn.classList.remove("active");
             informationBtn.classList.add("active");
             upcomingInterviewsBtn.classList.remove("active");
+            educationBtn.classList.remove("active");
 
             basic_info_in_about.style.display = "unset";
             contact_info_in_about.style.display = "unset";
@@ -349,6 +389,11 @@
 
             }
 
+            for (let i = 0; i < edu_area.length; i++) {
+                edu_area[i].style.display = "none";
+
+            }
+
         });
 
         upcomingInterviewsBtn.addEventListener("click", (e) => {
@@ -356,6 +401,7 @@
             assessmentBtn.classList.remove("active");
             informationBtn.classList.remove("active");
             upcomingInterviewsBtn.classList.add("active");
+            educationBtn.classList.remove("active");
 
             basic_info_in_about.style.display = "none";
             contact_info_in_about.style.display = "none";
@@ -370,7 +416,43 @@
 
             }
 
+            for (let i = 0; i < edu_area.length; i++) {
+                edu_area[i].style.display = "none";
+
+            }
+
         });
+
+
+        educationBtn.addEventListener("click" , (e) => {
+            tab_text.innerHTML = `Education`;
+
+            assessmentBtn.classList.remove("active");
+            informationBtn.classList.remove("active");
+            upcomingInterviewsBtn.classList.remove("active");
+            educationBtn.classList.add("active");
+
+
+
+            basic_info_in_about.style.display = "none";
+            contact_info_in_about.style.display = "none";
+
+            for (let i = 0; i < upcomingAssessmentContainer.length; i++) {
+                upcomingAssessmentContainer[i].style.display = "none";
+
+            }
+
+            for (let i = 0; i < upcomingInterviewContainer.length; i++) {
+                upcomingInterviewContainer[i].style.display = "none";
+
+            }
+
+            for (let i = 0; i < edu_area.length; i++) {
+                edu_area[i].style.display = "block";
+
+            }
+
+        })
     </script>
 
 </body>
