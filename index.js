@@ -133,6 +133,7 @@ app.get("/", (req, res) => {
     }
     else {
         userData = req.session.usedInProfilePage;
+        console.log("USER DATA : ",userData);
 
         if (userData.type === "interviewer") {
             req.session.counter = 1;

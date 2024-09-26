@@ -5,428 +5,374 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Profile</title>
-    <!-- <link rel="stylesheet" href="css/profilesectionstyle.css"> -->
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <!-- ===== ===== Custom Css ===== ===== -->
+    <link rel="stylesheet" href="/css/candidateProfilestyle.css">
+    <!-- <link rel="stylesheet" href="responsive.css"> -->
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        main {
-            margin-top: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 10px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        section {
-            margin-bottom: 50px;
-        }
-
-        section h2 {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        /* Header */
-        header {
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
-        }
-
-        header .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 10px 0px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header .container .logo img {
-            width: 34px;
-        }
-
-        header .container nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        header .container nav a:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-
-        /* Hero */
-        .hero {
-            position: relative;
-        }
-
-        .banner {
-            width: 100%;
-            height: 300px;
-        }
-
-        .banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .profilephoto {
-            width: 160px;
-            height: 160px;
-            position: relative;
-            bottom: 90px;
-            left: 20px;
-        }
-
-        .profilephoto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 50%;
-            border: 5px solid #fff;
-        }
-
-        .intro {
-            margin-top: 90px;
-        }
-
-        .intro-name {
-            font-size: 30px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .intro-desc {
-            font-size: 16px;
-            color: #232323;
-            margin-bottom: 20px;
-        }
-
-        /* About */
-        .about {
-            margin-top: 50px;
-        }
-
-        .about .about-desc {
-            font-size: 14px;
-            color: #232323;
-            margin-bottom: 20px;
-        }
-
-        /* Experience */
-        .exp-item {
-            display: flex;
-            margin-top: 40px;
-        }
-
-        .org-img {
-            width: 48px;
-            height: 48px;
-            margin-right: 20px;
-        }
-
-        .org-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 50%;
-        }
-
-        .role-name {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .role-org-name {
-            font-size: 14px;
-            color: #464646;
-            font-weight: 300;
-            margin-bottom: 5px;
-        }
-
-        .role-duration {
-            font-size: 14px;
-            color: #464646;
-            font-weight: 300;
-            margin-bottom: 5px;
-        }
-
-        .role-desc {
-            font-size: 14px;
-            color: #232323;
-            margin-bottom: 5px;
-        }
-
-        .role-desc ul {
-            padding-left: 20px;
-        }
-
-        /* Education */
-        .edu-item {
-            display: flex;
-            margin-top: 40px;
-        }
-
-        .edu-img {
-            width: 48px;
-            height: 48px;
-            margin-right: 20px;
-        }
-
-        .edu-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 50%;
-        }
-
-        .edu-name {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .edu-org-name {
-            font-size: 14px;
-            color: #464646;
-            font-weight: 300;
-            margin-bottom: 5px;
-        }
-
-        .edu-duration {
-            font-size: 14px;
-            color: #464646;
-            font-weight: 300;
-            margin-bottom: 5px;
-        }
-
-        /* Contact */
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-details a:hover {
-            color: #686868;
-            text-decoration: underline;
-        }
-
-
-
-        /* Footer */
-        footer {
-            background-color: #fff;
-            border-top: 1px solid #eee;
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-
-
-
-<!-- <link rel="shortcut icon" href="https://static.licdn.com/sc/h/akt4ae504epesldzj74dzred8" type="image/x-icon"> -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-    rel="stylesheet">
+    <!-- ===== ===== Remix Font Icons Cdn ===== ===== -->
+    <!-- <link rel="stylesheet" href="fonts/remixicon.css"> -->
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <!-- <div class="logo"><img src="https://static.licdn.com/sc/h/akt4ae504epesldzj74dzred8" alt=""></div> -->
-            <nav>
-                <a href="/">Home</a>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#certificates">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <!-- ===== ===== Body Main-Background ===== ===== -->
+    <span class="main_bg"></span>
 
-    <main>
-        <div class="hero">
-            <div class="banner">
-                <img src="/images/banner.jpg" alt="">
-                <div class="profilephoto">
-                    <img src="/images/no_profile_pic.png" alt="">
+
+    <!-- ===== ===== Main-Container ===== ===== -->
+    <div class="container">
+
+        <!-- ===== ===== Header/Navbar ===== ===== -->
+        <header>
+            <div class="brandLogo">
+                <figure><img src="/images/Logo1.jpg" alt="logo" width="40px" height="40px"></figure>
+                <span>DefenceTalent</span>
+            </div>
+        </header>
+
+
+        <!-- ===== ===== User Main-Profile ===== ===== -->
+        <section class="userProfile card">
+            <div class="profile">
+                <figure><img src="/images/no_profile_pic.png" alt="profile" width="250px" height="250px"></figure>
+            </div>
+        </section>
+
+
+        <!-- ===== ===== Work & Skills Section ===== ===== -->
+        <section class="work_skills card">
+
+            <!-- ===== ===== Work Contaienr ===== ===== -->
+            <div class="work">
+                <h1 class="heading">work</h1>
+                <div class="primary">
+                    <h1>Krishna Electronics</h1>
+                    <span>Primary</span>
+                    <p>
+                        <%= dataToShowInProfileSection.location %>
+                    </p>
+                </div>
+
+                <div class="secondary">
+                    <h1>Metropolitan <br>
+                        <%= dataToShowInProfileSection.jobTitle %>
+                    </h1>
+                    <span>Secondary</span>
+                    <p>S34 E 65th Street <br> Tamil Nadu, TN 10651-78 156-187-60</p>
                 </div>
             </div>
-            <div class="intro">
-                <div class="intro-name">
+
+            <!-- ===== ===== Skills Contaienr ===== ===== -->
+            <div class="skills">
+                <h1 class="heading">Skills</h1>
+                <ul>
+                    <li style="--i:0">Android</li>
+                    <li style="--i:1">Web-Design</li>
+                    <li style="--i:2">UI/UX</li>
+                    <li style="--i:3">Video Editing</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- ===== ===== User Details Sections ===== ===== -->
+        <section class="userDetails card">
+            <div class="userName">
+                <h1 class="name">
                     <%= dataToShowInProfileSection.name %>
+                </h1>
+                <div class="map">
+                    <i class="ri-map-pin-fill ri"></i>
+                    <span>Edit details</span>
                 </div>
-                <div class="intro-desc">
-                    <p><%= dataToShowInProfileSection.industry %></p>
-                    <p>React | Node | Express | MongoDB</p>
+                <p>Student</p>
+            </div>
+
+            <div class="rank">
+                <h1 class="heading">Rankings</h1>
+                <span>8,6</span>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
                 </div>
             </div>
 
-            <section class="about" id="about">
-                <h2>About</h2>
-                <p class="about-desc">
-                    I am a Full Stack Engineer with 2+ years of experience in building web applications. I have a
-                    Bachelor's degree in Computer Science and Engineering from the Guru Gobind Singh Indraprastha
-                    University. I am currently working as a Software Engineer at a startup called <a
-                        href="https://www.wheelseye.com">WheelsEye</a>. I am passionate about building scalable and
-                    responsive web applications using the latest technologies.
-                </p>
-            </section>
+            <div class="btns">
+                <ul>
+                    <li class="sendMsg" id="assessmentBtn">
+                        <i class="ri-chat-4-fill ri"></i>
+                        <a href="#">Assessment</a>
+                    </li>
 
-            <section class="experience" id="experience">
-                <h2>Experience</h2>
+                    <li class="sendMsg active" id="informationBtn">
+                        <i class="ri-check-fill ri"></i>
+                        <a href="#">Information</a>
+                    </li>
 
-                <div class="exp-item">
-                    <div class="org-img">
-                        <img src="https://images.yourstory.com/cs/images/companies/oiflRYdP400x400-1592909309243.jpg?fm=auto&ar=1:1&mode=fill&fill=solid&fill-color=fff"
-                            alt="">
+                    <li class="sendMsg" id="upcomingInterviewsBtn">
+                        <a href="#">Upcoming interviews</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- ===== ===== Timeline & About Sections ===== ===== -->
+        <section class="timeline_about card" id="aboutSection">
+            <div class="tabs" id="aboutSection">
+                <ul>
+
+
+                    <li class="about active">
+                        <i class="ri-user-3-fill ri"></i>
+                        <span id="tab_text">About</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact_Info" id="contact_info_in_about">
+                <h1 class="heading">Contact Information</h1>
+                <ul>
+                    <li class="phone">
+                        <h1 class="label">Phone:</h1>
+                        <span class="info">+91 <%= dataToShowInProfileSection.phone %></span>
+                    </li>
+
+                    <li class="address">
+                        <h1 class="label">Address:</h1>
+                        <span class="info">
+                            <%= dataToShowInProfileSection.location %> <br> Tamil Nadu, TN 10651-78 156-187-60
+                        </span>
+                    </li>
+
+                    <li class="email">
+                        <h1 class="label">E-mail:</h1>
+                        <span class="info">
+                            <%= dataToShowInProfileSection.email %>
+                        </span>
+                    </li>
+
+                    <li class="site">
+                        <h1 class="label">Site:</h1>
+                        <span class="info">www.defencetalent.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="basic_info" id="basic_info_in_about">
+                <h1 class="heading">Basic Information</h1>
+                <ul>
+                    <li class="birthday">
+                        <h1 class="label">Birthday:</h1>
+                        <span class="info">Dec 25, 2000</span>
+                    </li>
+
+                    <li class="sex">
+                        <h1 class="label">Gender:</h1>
+                        <span class="info">Male</span>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div id="upcoming_interview_container" class="uic">
+
+
+                <div id="left-side-int">
+
+                    <h1>Scientist - B</h1>
+
+                    <div id="time">
+                        <h2>Date</h2>
+                        <p>23 January 2025</p>
                     </div>
-                    <div class="exp-details">
-                        <h4 class="role-name">Software Engineer</h4>
-                        <div class="role-org-name">WheelsEye</div>
-                        <div class="role-duration">Aug 2022 - Present</div>
-                        <div class="role-desc">
-                            <ul>
-                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda iure,
-                                    unde mollitia cum fugit?</li>
-                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda iure,
-                                    unde mollitia cum fugit?</li>
-                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda iure,
-                                    unde mollitia cum fugit?</li>
-                            </ul>
-                        </div>
-                    </div>
+
+                </div>
+                <div id="middle_divs">
+                    <i class="fa-solid fa-circle"></i>
+                    <h2>Active</h2>
+                </div>
+                <div id="right-side-int">
+                    <button>
+                        View details
+                    </button>
                 </div>
 
-                <div class="exp-item">
-                    <div class="org-img">
-                        <img src="https://www.f6s.com/content-resource/profiles/2945277_original.jpg" alt="">
-                    </div>
-                    <div class="exp-details">
-                        <h4 class="role-name">Software Engineer</h4>
-                        <div class="role-org-name">Mazecare</div>
-                        <div class="role-duration">Apr 2022 - Jul 2022</div>
-                        <div class="role-desc">
-                            <ul>
-                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda iure,
-                                    unde mollitia cum fugit?</li>
-                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda iure,
-                                    unde mollitia cum fugit?</li>
-                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda iure,
-                                    unde mollitia cum fugit?</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="exp-item">
-                    <div class="org-img">
-                        <img src="https://omrajsharma.github.io/assets/images/datametricks-logo.jpg" alt="">
+            </div>
+            <div id="upcoming_interview_container" class="uic">
+
+
+                <div id="left-side-int">
+
+                    <h1>Scientist - C</h1>
+
+                    <div id="time">
+                        <h2>Date</h2>
+                        <p>15 March 2025</p>
                     </div>
-                    <div class="exp-details">
-                        <h4 class="role-name">Software Engineer</h4>
-                        <div class="role-org-name">DataMatricks</div>
-                        <div class="role-duration">Dec 2021 - Feb 2022</div>
-                        <div class="role-desc">
-                            <ul>
-                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda iure,
-                                    unde mollitia cum fugit?</li>
-                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda iure,
-                                    unde mollitia cum fugit?</li>
-                                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique assumenda iure,
-                                    unde mollitia cum fugit?</li>
-                            </ul>
-                        </div>
-                    </div>
+
+                </div>
+                <div id="middle_divs">
+                    <i class="fa-solid fa-circle"></i>
+                    <h2>Active</h2>
+                </div>
+                <div id="right-side-int">
+                    <button>
+                        View details
+                    </button>
                 </div>
 
 
-            </section>
+            </div>
 
-            <section class="education" id="education">
-                <h2>Education</h2>
+            <div id="upcoming_assessments" class="uac">
+                <div id="left-side-as">
 
-                <div class="edu-item">
-                    <div class="edu-img">
-                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/GGSIU_logo.svg/1200px-GGSIU_logo.svg.png"
-                            alt="">
+                    <h1>Assessment - 1</h1>
+
+
+                    <div id="time-work">
+                        <i class="fa-solid fa-clock">&nbsp;&nbsp;</i><b>9 : 15 AM</b>
                     </div>
-                    <div class="edu-details">
-                        <h4 class="edu-name">Bachelor of Technology, Information Technology</h4>
-                        <div class="edu-org-name">Maharaja Agrasen Institute of Technology, GGSIPU</div>
-                        <div class="edu-duration">Aug 2019 - Aug 2023</div>
+
+                    
+
+                    <div id="time">
+                        <h2>Date</h2>
+                        <p>11 January 2025 </p>
                     </div>
+
+                </div>
+                <div id="middle_divs_as">
+                    <i class="fa-solid fa-circle"></i>
+                    <h2>Active</h2>
+                </div>
+                <div id="right-side-as">
+                    <button>
+                        View details
+                    </button>
                 </div>
 
+            </div>
 
-                <div class="edu-item">
-                    <div class="edu-img">
-                        <img src="https://dpsjhakri.com/images/dps_logo1.png" alt="">
+            <div id="upcoming_assessments" class="uac">
+                <div id="left-side-as">
+
+                    <h1>Assessment - 2</h1>
+                    
+                    <div id="time-work">
+                        <i class="fa-solid fa-clock">&nbsp;&nbsp;</i><b>9 : 15 AM</b>
                     </div>
-                    <div class="edu-details">
-                        <h4 class="edu-name">Intermediate - 12th Class</h4>
-                        <div class="edu-org-name">Delhi Public School</div>
-                        <div class="edu-duration">2018 - 2019</div>
+
+                    <div id="time">
+                        <h2>Date</h2>
+                        <p>3 March 2025 <b>9 : 15 AM</b></p>
                     </div>
+
+                </div>
+                <div id="middle_divs_as">
+                    <i class="fa-solid fa-circle"></i>
+                    <h2>Active</h2>
+                </div>
+                <div id="right-side-as">
+                    <button>
+                        View details
+                    </button>
                 </div>
 
-                <div class="edu-item">
-                    <div class="edu-img">
-                        <img src="https://dpsjhakri.com/images/dps_logo1.png" alt="">
-                    </div>
-                    <div class="edu-details">
-                        <h4 class="edu-name">Matricular - 10th Class</h4>
-                        <div class="edu-org-name">Delhi Public School</div>
-                        <div class="edu-duration">2016 - 2017</div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="contact" id="contact">
-                <h2>Contact</h2>
-                <div class="contact-details">
-                    <a href="tel:1234567890">☎️ +91-1234567890</a>
-                    <a href="mailto:kartik7413@gmail.com">📩 kartik7413@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/kartiksharma/">🔗 linkedin.com/in/kartiksharma</a>
-                    <a href="https://github.com/kartiksharma">👨🏻‍💻 github.com/kartiksharma</a>
-                    <a href="https://twitter.com/kartik_sharma">🐤 twitter.com/kartik_sharma</a>
-                </div>
-            </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Defence Talent</p>
-    </footer>
+            </div>
+        </section>
 
 
 
-    <!-- <script src="script.js"></script> -->
+
+
+
+    </div>
+
+    <script>
+        const assessmentBtn = document.querySelector("#assessmentBtn");
+        const informationBtn = document.querySelector("#informationBtn");
+        const upcomingInterviewsBtn = document.querySelector("#upcomingInterviewsBtn");
+        const upcomingInterviewContainer = document.getElementsByClassName("uic");
+        const upcomingAssessmentContainer = document.getElementsByClassName("uac");
+        const basic_info_in_about = document.querySelector("#basic_info_in_about");
+        const contact_info_in_about = document.querySelector("#contact_info_in_about");
+        const tab_text = document.querySelector("#tab_text");
+
+
+        assessmentBtn.addEventListener("click", (e) => {
+            tab_text.innerHTML = `Assessment`;
+            assessmentBtn.classList.add("active");
+            informationBtn.classList.remove("active");
+            upcomingInterviewsBtn.classList.remove("active");
+
+            basic_info_in_about.style.display = "none";
+            contact_info_in_about.style.display = "none";
+
+            for (let i = 0; i < upcomingInterviewContainer.length; i++) {
+                upcomingInterviewContainer[i].style.display = "none";
+
+            }
+
+            for (let i = 0; i < upcomingAssessmentContainer.length; i++) {
+                upcomingAssessmentContainer[i].style.display = "flex";
+
+            }
+        });
+
+        informationBtn.addEventListener("click", (e) => {
+            tab_text.innerHTML = `About`;
+            assessmentBtn.classList.remove("active");
+            informationBtn.classList.add("active");
+            upcomingInterviewsBtn.classList.remove("active");
+
+            basic_info_in_about.style.display = "unset";
+            contact_info_in_about.style.display = "unset";
+
+            for (let i = 0; i < upcomingAssessmentContainer.length; i++) {
+                upcomingAssessmentContainer[i].style.display = "none";
+
+            }
+
+            for (let i = 0; i < upcomingInterviewContainer.length; i++) {
+                upcomingInterviewContainer[i].style.display = "none";
+
+            }
+
+        });
+
+        upcomingInterviewsBtn.addEventListener("click", (e) => {
+            tab_text.innerHTML = `Upcoming interviews`;
+            assessmentBtn.classList.remove("active");
+            informationBtn.classList.remove("active");
+            upcomingInterviewsBtn.classList.add("active");
+
+            basic_info_in_about.style.display = "none";
+            contact_info_in_about.style.display = "none";
+
+            for (let i = 0; i < upcomingAssessmentContainer.length; i++) {
+                upcomingAssessmentContainer[i].style.display = "none";
+
+            }
+
+            for (let i = 0; i < upcomingInterviewContainer.length; i++) {
+                upcomingInterviewContainer[i].style.display = "flex";
+
+            }
+
+        });
+    </script>
+
 </body>
 
 </html>
